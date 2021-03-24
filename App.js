@@ -1,11 +1,27 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import {
+  StatusBar,
+  StyleSheet,
+  Text,
+  View,
+  SafeAreaView,
+  Platform,
+} from 'react-native';
+import { StatusBar as ExpoStatusBar } from 'expo-status-bar';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Our react native blank canvs</Text>
-    </View>
+    <>
+      <SafeAreaView style={{ flex: 1, marginTop: StatusBar.currentHeight }}>
+        <View style={{ padding: 16, backgroundColor: 'green' }}>
+          <Text>search</Text>
+        </View>
+        <View style={{ flex: 1, padding: 16, backgroundColor: 'blue' }}>
+          <Text>list</Text>
+        </View>
+      </SafeAreaView>
+      <ExpoStatusBar style='auto' />
+    </>
   );
 }
 
