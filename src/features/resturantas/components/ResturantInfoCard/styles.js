@@ -3,6 +3,7 @@ import { Text } from 'react-native';
 import { Card } from 'react-native-paper';
 
 export const Title = styled(Text)`
+  font-family: ${({ theme }) => theme.fonts.body};
   padding: ${({ theme }) => theme.space[3]};
   color: ${({ theme }) => theme.colors.ui.primary};
 `;
