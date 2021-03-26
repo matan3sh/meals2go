@@ -3,13 +3,14 @@ import { Text } from 'react-native';
 import { Card } from 'react-native-paper';
 
 export const Title = styled(Text)`
-  padding: 16px;
+  padding: ${({ theme }) => theme.space[3]};
+  color: ${({ theme }) => theme.colors.ui.primary};
 `;
 
 export const ResturantCard = styled(Card)`
-  background-color: #fff;
+  background-color: ${({ theme }) => theme.colors.bg.primary};
 `;
 
 export const ResturantCardCover = styled(Card.Cover)`
-  padding: 20px;
+  padding: ${({ theme }) => theme.space[3]};
 `;
