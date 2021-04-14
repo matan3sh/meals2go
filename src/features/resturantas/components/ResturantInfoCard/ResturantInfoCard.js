@@ -1,5 +1,15 @@
 import React from 'react';
-import { Title, ResturantCard, ResturantCardCover } from './styles';
+import { SvgXml } from 'react-native-svg';
+
+import {
+  Title,
+  ResturantCard,
+  ResturantCardCover,
+  Info,
+  Address,
+  Rating,
+} from './styles';
+import star from '../../../../../assets/star';
 
 const ResturantInfoCard = ({ resturant = {} }) => {
   const {
@@ -13,10 +23,20 @@ const ResturantInfoCard = ({ resturant = {} }) => {
     rating = 4,
     isClosedTemporarily,
   } = resturant;
+  const ratingArray = Array.from(new Array(Math.floor(rating)));
+
   return (
     <ResturantCard elevation={5}>
       <ResturantCardCover key={name} source={{ uri: photos[0] }} />
-      <Title>{name}</Title>
+      <Info>
+        <Title>{name}</Title>
+        <Rating>
+          {ratingArray.map((key) => (
+            <SvgXml xml={star} width={20} height={20} key={key} />
+          ))}
+        </Rating>
+        <Address>{name}</Address>
+      </Info>
     </ResturantCard>
   );
 };
