@@ -1,7 +1,8 @@
 import React from 'react';
-import { Text, Image, View } from 'react-native';
+import { Text, Image } from 'react-native';
 import { SvgXml } from 'react-native-svg';
 
+import { Spacer } from '../../../../components';
 import {
   Title,
   ResturantCard,
@@ -46,9 +47,9 @@ const ResturantInfoCard = ({ resturant = {} }) => {
                 CLOSED TEMPORARILY
               </Text>
             )}
-            <View style={{ paddingLeft: 16 }} />
+            <Spacer variant='left.large' />
             {isOpenNow && <SvgXml xml={open} width={20} height={20} />}
-            <View style={{ paddingLeft: 16 }} />
+            <Spacer variant='left.large' />
             <Image style={{ width: 15, height: 15 }} source={{ uri: icon }} />
           </SectionEnd>
         </Section>
